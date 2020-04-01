@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /target/DemoPipelineJava-0.0.1-SNAPSHOT.war 
+    destination: /usr/share/tomcat9-codedeploy/webapps/
+hooks:
+  BeforeInstall: 
+    - location: scripts/installtomcat.sh
+      timeout: 60
+  Install:
+    - location: scripts/welcome.sh
+      timeout: 60
+  ApplicationStart:
+    - location: scripts/starttomcat.sh
+      timeout: 60
+
