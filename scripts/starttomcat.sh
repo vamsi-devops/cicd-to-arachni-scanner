@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir bbau
+mkdir Demo
 service tomcat9 start
 service tomcat9 restart
 touch f1
