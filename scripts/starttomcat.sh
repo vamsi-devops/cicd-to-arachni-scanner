@@ -1,7 +1,5 @@
 #!/bin/bash
-cd /etc/init.d/tomcat9
-chmod 777 tomcat9
-chmod 777 /etc/init.d/tomcat9
+echo "hai"
 service tomcat9 start
 service tomcat9 restart
 touch f1
