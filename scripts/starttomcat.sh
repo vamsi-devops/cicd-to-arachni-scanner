@@ -33,6 +33,6 @@ fi
 mkdir report
 unzip report_latest.html.zip -d report
 cd report
-aws s3 cp report5.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+aws s3 cp index.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
  
 
