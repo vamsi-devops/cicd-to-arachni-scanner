@@ -11,7 +11,7 @@ cd /root/arachni-1.5.1-0.5.12/bin
 abc=`ls -la | grep report_latest.afr`
 if [[ $abc = report_latest.afr ]]
 then
-rm -rf c.afr
+rm -rf report_latest.afr
 else
 echo "file is not there generate report"
 fi
