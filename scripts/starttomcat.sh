@@ -8,17 +8,31 @@ service tomcat9 restart
 touch f1
 #cd /root/arachni-1.5.1-0.5.12-linux-x86_64/bin
 cd /root/arachni-1.5.1-0.5.12/bin
-#touch r3.html
-#./arachni http://13.234.98.68:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* >r3.html
-#./arachni http://13.234.98.68:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* --report-save-path=1.afr
-#./arachni_reporter 1.afr --reporter=html:outfile=my_report_new1.html.zip
-#aws s3 cp r3.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
-./arachni http://13.234.98.68:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* --report-save-path=5.afr
-./arachni_reporter 5.afr --reporter=html:outfile=my_report5.html.zip
-mkdir repo5
-unzip my_report5.html.zip -d repo5
-cd repo5
-mv index.html report5.html
+abc=`ls -la | grep report_latest.afr`
+if [[ $abc = report_latest.afr ]]
+then
+rm -rf c.afr
+else
+echo "file is not there generate report"
+fi
+./arachni http://13.234.98.68:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* --report-save-path=report_latest.afr
+abc=`ls -la | grep report_latest.html.zip`
+if [[ $abc = report_latest.html.zip ]]
+then
+rm -rf report_latest.html.zip
+else
+echo "file is not there generate report"
+fi
+./arachni_reporter report_latest.afr --reporter=html:outfile=report_latest.html.zip
+if [[ $abc = report ]]
+then
+rm -rf report
+else
+echo "file is not there create directory"
+fi
+mkdir report
+unzip report_latest.html.zip -d report
+cd report
 aws s3 cp report5.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
  
 
