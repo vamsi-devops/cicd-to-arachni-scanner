@@ -19,6 +19,6 @@ mkdir repo5
 unzip my_report5.html.zip -d repo5
 cd repo5
 mv index.html report5.html
-aws s3 cp report1.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+aws s3 cp report5.html s3://arachni2/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
  
 
