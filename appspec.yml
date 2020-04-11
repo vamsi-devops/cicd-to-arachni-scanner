@@ -12,5 +12,5 @@ hooks:
       timeout: 60
   ApplicationStart:
     - location: scripts/starttomcat.sh
-      timeout: 120
+      timeout: 1200
 
