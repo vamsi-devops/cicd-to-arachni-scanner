@@ -15,7 +15,7 @@ rm -rf report_latest.afr
 else
 echo "file is not there generate report"
 fi
-./arachni http://13.234.98.68:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* --report-save-path=report_latest.afr
+./arachni http://18.222.123.92:8080/DemoPipelineJava-0.0.1-SNAPSHOT/ --checks=xss* --report-save-path=report_latest.afr
 abc=`ls -la | grep report_latest.html.zip`
 if [[ $abc = report_latest.html.zip ]]
 then
